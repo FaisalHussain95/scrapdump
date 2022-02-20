@@ -1,0 +1,36 @@
+{
+  "name": "scrapdump",
+  "version": "1.0.0",
+  "description": "Scraping of multiple website made using Node + Express + Cheerio",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaisalHussain95/scrapdump.git"
+  },
+  "keywords": [
+    "scrape",
+    "website",
+    "node",
+    "express"
+  ],
+  "author": "Faisal HUSSAIN <faisal.hussain@outlook.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaisalHussain95/scrapdump/issues"
+  },
+  "homepage": "https://github.com/FaisalHussain95/scrapdump#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
