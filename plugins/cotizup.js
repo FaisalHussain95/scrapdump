@@ -48,8 +48,8 @@ exports.output = async (params) => {
           const price = $(_price);
 
           res.prices.push({
-            raw: price.text(),
-            total: parseInt(price
+            raw: price.parent().html(),
+            goal: parseInt(price
               .find('span').text()
               .replace(/[€$£]/, '')
               .replace(' ', '')
