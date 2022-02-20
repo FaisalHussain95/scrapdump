@@ -42,21 +42,26 @@ exports.output = async (params) => {
      */
       const prices = $('.price-total');
       if (prices && prices.length) {
-        res.prices = [];
+        const price = prices.first();
+        const total = price.find('span:not(.count-donors)');
+        let goal = null;
 
-        prices.each((i, _price) => {
-          const price = $(_price);
+        if (total && total.length) {
+          const totalText = total.first().text();
 
-          res.prices.push({
-            raw: price.parent().html(),
-            goal: parseInt(price
-              .find('span').text()
+          if (totalText.match(/[€$£]/)) {
+            goal = parseInt(total.first().text()
               .replace(/[€$£]/, '')
               .replace(' ', '')
-              .trim(), 10),
-            collected: parseInt(price.attr('data-collected'), 10),
-          });
-        });
+              .trim(), 10);
+          }
+        }
+
+        res.raised = {
+          raw: price.parent().html(),
+          goal,
+          collected: parseInt(price.attr('data-collected'), 10),
+        };
       }
     }
   } catch (error) {

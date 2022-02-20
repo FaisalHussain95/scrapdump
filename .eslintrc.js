@@ -11,5 +11,7 @@ module.exports = {
     sourceType: 'script',
   },
   rules: {
+    'global-require': 'off',
+    'no-console': 'off',
   },
 };
